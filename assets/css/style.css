@@ -1,0 +1,102 @@
+/* ========================================
+   SMARTBILL POS - GLOBAL STYLES
+   Compatible with the fixed sidebar
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    background: #f5f7fb;
+    color: #1e293b;
+    font-family: Arial, sans-serif;
+}
+
+/* Main page content
+   Sidebar handles desktop body spacing.
+   Do NOT add another sidebar margin here. */
+.main-content {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    padding: 28px;
+}
+
+/* Page headings */
+.page-title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 750;
+    color: #172033;
+}
+
+.muted {
+    color: #7b8498;
+    font-size: 13px;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 18px 22px;
+    margin-bottom: 24px;
+    background: #fff;
+    border: 1px solid #edf0f5;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+/* Prevent content panels from being artificially narrowed */
+.main-content > .panel,
+.main-content > section,
+.main-content > header {
+    max-width: none;
+    min-width: 0;
+}
+
+/* Tables */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Forms */
+.form-control,
+.form-select {
+    max-width: 100%;
+}
+
+/* Tablet and mobile */
+@media (max-width: 900px) {
+    .main-content {
+        width: 100%;
+        margin: 0;
+        padding: 72px 20px 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: 72px 14px 18px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .topbar {
+        padding: 15px;
+    }
+}
