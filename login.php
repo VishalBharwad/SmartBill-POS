@@ -29,17 +29,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$username]);
         $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
-     if ($admin && $password === $admin['password']) {
-            session_regenerate_id(true);
+if ($admin && password_verify($password, $admin['password'])) {
+    session_regenerate_id(true);
 
-            $_SESSION['admin_id'] = $admin['id'];
-            $_SESSION['admin_username'] = $admin['username'];
+    $_SESSION['admin_id'] = $admin['id'];
+    $_SESSION['admin_username'] = $admin['username'];
 
-            unset($_SESSION['login_token']);
-
-            header('Location: index.php');
-            exit;
-        }
+    header('Location: index.php');
+    exit;
+}
 
         $error = 'Invalid username or password.';
     }
@@ -100,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="login-card">
     <div class="text-center mb-4">
         <div class="brand-icon">B</div>
-        <h3 class="fw-bold">Brainbean POS</h3>
+        <h3 class="fw-bold">SmartBill-POS</h3>
         <p class="text-secondary">Sign in to your admin account</p>
     </div>
 
